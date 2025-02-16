@@ -1,0 +1,289 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", serif;
+    list-style: none;
+}
+
+/* Общие классы */
+
+.flex-direction-column-gap-16 {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+h2 {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24.2px;
+}
+
+input[type="text"]::placeholder,
+input[type="date"]::placeholder {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+    color: #49454F;
+}
+
+/* ------------ */
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+}
+
+.app-todo {
+    /* max-height: 100%; */
+    margin: 50px;
+    background-color: #FFFBFF;
+    width: 428px;
+    border-radius: 8px;
+    padding: 24px 16px 16px 16px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+/* Работа с блоком header */
+
+.header-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.header-info p {
+    font-size: 15px;
+    line-height: 18.15px;
+}
+
+.search-box {
+    display: flex;
+}
+
+.search-box input,
+.search-box button {
+    background-color: rgba(29, 27, 32, 0.08);
+    border: none;
+    outline: none;
+}
+
+.search-box input {
+    flex-basis: 85%;
+    padding: 12px 0 12px 20px;
+    border-top-left-radius: 28px;
+    border-bottom-left-radius: 28px;
+}
+
+.search-box button {
+    flex-basis: 15%;
+    padding-right: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+/* Работа с блоком todo-list */
+
+.tabs {
+    display: flex;
+    padding: 4px 0;
+}
+
+.tab {
+    flex: 1;
+    background-color: #FFFBFF;
+    outline: none;
+    border: 1px solid #79747E;
+    cursor: pointer;
+    padding: 10px;
+
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.1px;
+    color: #1D1B20;
+}
+
+.tab:first-child {
+    border-radius: 100px 0 0 100px;
+    border-right: none;
+}
+
+.tab:last-child {
+    border-radius: 0 100px 100px 0;
+    border-left: none;
+}
+
+.tab.active {
+    background-color: #E8DEF8;
+}
+
+/* Стили для списка задач */
+
+#tasks {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    overflow-y: auto;
+    height: 380px;
+    max-height: 380px;
+    overflow: auto;
+}
+
+.task-list {
+    background-color: rgba(103, 80, 164, 0.05);
+    border-radius: 16px;
+}
+
+.custom-checkbox {
+    display: flex;
+    margin: 8px;
+}
+.custom-checkbox input {
+    margin: 12px;
+}
+
+/* .custom-checkbox div {
+
+} */
+ .taskDate {
+    font-size: 14px;
+    line-height: 16.94px;
+    color: rgba(29, 27, 30, 1);
+    margin-bottom: 8px;
+ }
+
+ .taskText {
+    font-size: 16px;
+    line-height: 16.36px;
+    color: rgba(29, 27, 30, 1);
+ }
+
+/* Дописать стили для списка задач */
+
+
+/* Работа с блоком footer */
+
+.footer {
+    display: flex;
+    justify-content: end;
+}
+
+.addTask-button {
+    border-radius: 16px;
+    box-shadow: 0 4px 8px 3px #00000026;
+    border: none;
+    outline: none;
+    padding: 19px;
+    background-color: #EBDEF7;
+    cursor: pointer;
+}
+
+/* Работа с модальным окном */
+
+.modal {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.32);
+    opacity: 0;  
+    /*Нужно значение 0*/
+    visibility: hidden; 
+     /*Нужно hiden*/
+    transition: 0.5s;    
+}
+
+.modal.active {
+    opacity: 1;  /*Нужно значение 1*/
+    visibility: visible;  
+    /*Нужно visible*/
+}
+
+.new-entry {
+    padding: 0 16px 16px 16px;
+    background-color: #F7F2FA;
+    border-top-left-radius: 28px;
+    border-top-right-radius: 28px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0; 
+    /*Нужно значение 0*/
+    transform: translateY(50px);
+    transition: 0.5s;
+}
+
+.new-entry.active {
+    opacity: 1; /*Нужно значение 1*/
+    transform: translateY(0);
+}
+
+.new-entry hr {
+    margin: 16px auto;
+    width: 32px;
+    height: 4px;
+    background-color: #79747E;
+    border-radius: 100px;
+    border: none;
+}
+
+#addNewEntryForm {
+    display: flex;
+    flex-direction: column;
+    gap: 44px;
+}
+
+.dataEntry input {
+    border-radius: 4px;
+    outline: none;
+    padding: 16px;
+    background-color: #F7F2FA;
+    border: 1px solid #79747E;
+}
+
+.switch {
+    display: flex;
+    justify-content: space-between;
+}
+
+.slider {
+    display: none;
+}
+
+.buttonsForm {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.buttonsForm button {
+    padding: 10px 24px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0.1px;
+    border-radius: 100px;
+    outline: none;
+    cursor: pointer;
+}
+
+.buttonsForm button[type="submit"] {
+    background-color: #6750A4;
+    color: #FFFFFF;
+
+}
+
+/* .buttonsForm button[type="reset"] {
+
+} */
