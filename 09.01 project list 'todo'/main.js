@@ -199,7 +199,7 @@ function startApp() {
     //     return formattedDate;
     // }
     // getInputAndSetDate(date)
-    
+    //Second branch (main)
 
 
 
